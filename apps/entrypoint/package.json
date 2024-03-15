@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "entrypoint",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/tsconfig": "^0.5.1",
+    "rollup-plugin-visualizer": "^5.12.0",
+    "typescript": "^5.4.2",
+    "ui-kit-vite": "workspace:ui-kit-vite",
+    "vite": "^5.1.6",
+    "vue-tsc": "^2.0.6"
+  }
+}

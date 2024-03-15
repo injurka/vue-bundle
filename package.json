@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=20.x",
+    "pnpm": ">=8.x"
+  },
+  "scripts": {
+    "lint": "eslint . --fix",
+    "postinstall": "simple-git-hooks"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.8.3",
+    "eslint": "8.57.0",
+    "eslint-plugin-format": "^0.1.0",
+    "simple-git-hooks": "^2.10.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged",
+    "post-commit": "git status",
+    "post-merge": "pnpm i"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}

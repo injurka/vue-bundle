@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig.json",
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "#/*": [
+        "./src/*"
+      ],
+      "~/*": [
+        "./stories/*"
+      ]
+    },
+    "noEmit": false
+  },
+  "include": [
+    ".storybook",
+    "stories",
+    "src/**/*"
+  ]
+}
