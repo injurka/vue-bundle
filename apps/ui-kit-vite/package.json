@@ -35,7 +35,6 @@
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build": "rm -rf dist && vite build --mode lib",
-    "tsc": "tsc -p tsconfig.build.json",
     "-------------------------------------------------------------------------------": "",
     "storybook:build": "storybook build",
     "--------------------------------------------------------------------------------": "",

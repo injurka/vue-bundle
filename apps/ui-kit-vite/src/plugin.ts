@@ -1,7 +1,7 @@
 import type { App } from 'vue'
 
-export { UiHeader } from './components/ui-header'
-export { UiBtn } from './components/ui-btn/ui-btn'
+import { UiHeader } from './components/ui-header'
+import { UiBtn } from './components/ui-btn/ui-btn'
 
 const components = [
   UiHeader,

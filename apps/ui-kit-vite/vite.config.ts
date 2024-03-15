@@ -24,7 +24,7 @@ export default defineConfig(async ({ command }): Promise<UserConfig> => ({
     extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue'],
   },
   build: {
-    minify: true,
+    minify: false,
     cssCodeSplit: true,
     outDir: 'dist',
     emptyOutDir: true,
@@ -39,7 +39,7 @@ export default defineConfig(async ({ command }): Promise<UserConfig> => ({
       input: {
         main: path.resolve(__dirname, 'src/index.ts'),
       },
-      external: ['vue', 'd3-shape'],
+      external: ['vue'],
       output: {
         exports: 'named',
       },
