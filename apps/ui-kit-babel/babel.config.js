@@ -5,21 +5,27 @@ module.exports = {
   ignore: [/\.d\.ts$/],
   presets: [
     [
-      "@babel/preset-env",
+      '@babel/preset-env',
       {
         modules: false,
       },
     ],
-    "@babel/preset-typescript",
+    '@babel/preset-typescript',
   ],
   plugins: [
-    ["@vue/babel-plugin-jsx", { optimize: false, enableObjectSlots: false }],
     [
-      "module-resolver",
+      '@vue/babel-plugin-jsx',
       {
-        root: ["."],
+        optimize: false,
+        enableObjectSlots: false,
+      },
+    ],
+    [
+      'module-resolver',
+      {
+        root: ['.'],
         alias: {
-          "@": "./src",
+          '#': './src',
         },
       },
     ],
@@ -28,28 +34,28 @@ module.exports = {
     test: {
       presets: [
         [
-          "@babel/preset-env",
+          '@babel/preset-env',
           {
             targets: { node: true },
-            modules: "commonjs",
+            modules: 'commonjs',
           },
         ],
       ],
     },
     lib: {
-      ignore: ["**/__tests__"],
+      ignore: ['**/__tests__'],
       plugins: [
-        ["babel-plugin-add-import-extension", { extension: "mjs" }],
+        ['babel-plugin-add-import-extension', { extension: 'mjs' }],
         [
-          "./build/babel-plugin-replace-import-extension",
+          './build/babel-plugin-replace-import-extension',
           {
             extMapping: {
-              ".sass": ".css",
-              ".scss": ".css",
+              '.sass': '.css',
+              '.scss': '.css',
             },
           },
         ],
       ],
     },
   },
-};
+}

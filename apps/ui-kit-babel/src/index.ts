@@ -1,5 +1,5 @@
-//* Imports
-export * from './components/ui-header'
-export * from './components/ui-btn/ui-btn'
+import * as components from './components'
+import { create } from './plugin'
 
-export * as default from './plugin'
+export { components }
+export default create

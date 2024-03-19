@@ -17,6 +17,7 @@
   "include": [
     ".storybook",
     "stories",
-    "src/**/*"
+    "src/**/*",
+    "../ui-kit-vite/src/components/index.ts"
   ]
 }
