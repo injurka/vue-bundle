@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "ui-kit-vite",
+  "type": "module",
+  "version": "0.0.1",
+  "keywords": [
+    "ui library"
+  ],
+  "sideEffects": [
+    "**/*.css",
+    "**/*.scss"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/main.d.ts",
+      "import": "./dist/main.js",
+      "require": "./dist/main.cjs"
+    },
+    "./main.css": {
+      "import": "./dist/main.css",
+      "require": "./dist/main.css"
+    }
+  },
+  "main": "./dist/main.cjs",
+  "module": "./dist/main.js",
+  "types": "./dist/main.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20.x",
+    "bun": ">=1.x"
+  },
+  "scripts": {
+    "build": "rm -rf dist && vite build --mode lib",
+    "typecheck": "tsc -p tsconfig.app.json --noEmit "
+  },
+  "peerDependencies": {
+    "vue": ">=3.3.0"
+  },
+  "peerDependenciesMeta": {
+    "vue": {
+      "optional": false
+    }
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.2",
+    "@types/node": "20.11.28",
+    "@vitejs/plugin-vue": "5.0.4",
+    "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "@vue/tsconfig": "^0.5.1",
+    "rollup-plugin-visualizer": "^5.12.0",
+    "sass": "^1.72.0",
+    "typescript": "5.4.2",
+    "vite": "5.1.6",
+    "vite-plugin-dts": "3.7.3",
+    "vue": "^3.4.21"
+  }
+}
