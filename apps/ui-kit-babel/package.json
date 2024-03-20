@@ -2,7 +2,6 @@
   "$schema": "https://json.schemastore.org/package.json",
   "name": "ui-kit-babel",
   "version": "0.0.1",
-  "description": "Пакет стилизованных компонентов для проектов mentalhealth",
   "keywords": [
     "ui library"
   ],
@@ -38,13 +37,7 @@
     "build:dist": "rollup --config build/rollup.config.mjs",
     "build:lib": "cross-env NODE_ENV=lib babel src --out-dir lib --source-maps --extensions \".ts\",\".tsx\",\".snap\" --copy-files --no-copy-ignored --out-file-extension .mjs",
     "build:types": "rimraf types-temp && tsc --pretty --emitDeclarationOnly -p tsconfig.build.json && rollup --config build/rollup.types.config.mjs && rimraf types-temp",
-    "-------------------------------------------------------------------------------": "",
-    "storybook:build": "storybook build",
-    "--------------------------------------------------------------------------------": "",
-    "typecheck": "tsc -p tsconfig.app.json --noEmit ",
-    "----------------------------------------------------------------------------------": "",
-    "prepack": "clean-package",
-    "postpack": "clean-package restore"
+    "typecheck": "tsc -p tsconfig.app.json --noEmit "
   },
   "peerDependencies": {
     "vue": ">=3.4.0"
@@ -62,14 +55,8 @@
     "@rollup/plugin-alias": "^5.1.0",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-node-resolve": "^15.2.3",
-    "@storybook/addon-essentials": "^8.0.0",
-    "@storybook/addon-interactions": "^8.0.0",
-    "@storybook/vue3": "^8.0.0",
-    "@storybook/vue3-vite": "^8.0.0",
     "@tsconfig/node20": "^20.1.2",
     "@types/node": "20.11.28",
-    "@vitejs/plugin-vue": "5.0.4",
-    "@vitejs/plugin-vue-jsx": "^3.1.0",
     "@vue/babel-plugin-jsx": "^1.2.1",
     "@vue/tsconfig": "^0.5.1",
     "acorn-walk": "^8.3.2",
@@ -78,39 +65,21 @@
     "babel-plugin-module-resolver": "^5.0.0",
     "babel-plugin-transform-define": "^2.1.4",
     "babel-polyfill": "^6.26.0",
-    "clean-package": "^2.2.0",
     "concurrently": "^8.2.2",
     "cross-env": "^7.0.3",
     "cssnano": "^6.1.0",
-    "esno": "^4.7.0",
     "fast-glob": "^3.3.2",
     "magic-string": "^0.30.8",
     "micromatch": "^4.0.5",
     "mkdirp": "^3.0.1",
     "postcss": "^8.4.37",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "rimraf": "^5.0.5",
     "rollup": "^4.13.0",
     "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-sass": "^1.12.21",
     "rollup-plugin-visualizer": "^5.12.0",
     "sass": "^1.72.0",
-    "storybook": "^8.0.0",
     "typescript": "5.4.2",
-    "vite": "5.1.6",
-    "vite-plugin-dts": "3.7.3",
     "vue": "^3.4.21"
-  },
-  "clean-package": {
-    "remove": [
-      "scripts",
-      "devDependencies",
-      "publishConfig",
-      "clean-package",
-      "packageManager",
-      "lint-staged",
-      "config"
-    ]
   }
 }

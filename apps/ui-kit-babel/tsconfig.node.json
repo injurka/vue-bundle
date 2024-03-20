@@ -16,7 +16,6 @@
   },
   "include": [
     "vite.config.*",
-    "server",
     "package.json"
   ]
 }

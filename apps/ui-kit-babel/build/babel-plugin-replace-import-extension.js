@@ -28,7 +28,7 @@ function getOption(state, key) {
   return opts[key]
 }
 
-module.exports = function ({ types: t }) {
+module.exports = function () {
   return {
     visitor: {
       ImportDeclaration(path, state) {
@@ -40,7 +40,7 @@ module.exports = function ({ types: t }) {
 
         source.value = transformExtension(source.value, extMapping)
       },
-      // For re-exporting
+      //* For re-exporting
       'ExportNamedDeclaration|ExportAllDeclaration': function (path, state) {
         const extMapping = getOption(state, 'extMapping')
         if (!extMapping)

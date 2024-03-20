@@ -8,6 +8,7 @@
     "pnpm": ">=8.x"
   },
   "scripts": {
+    "build": "pnpm --filter ui-kit-* build",
     "lint": "eslint . --fix",
     "postinstall": "simple-git-hooks"
   },

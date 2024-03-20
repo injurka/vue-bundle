@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import 'ui-kit-vite/main.css';
-
 import { UiHeader, UiBtn } from "ui-kit-vite";
 </script>
 
@@ -9,3 +7,5 @@ import { UiHeader, UiBtn } from "ui-kit-vite";
   <UiBtn> Button </UiBtn>
 </template>
 
+<style lang="scss" scoped >
+</style>

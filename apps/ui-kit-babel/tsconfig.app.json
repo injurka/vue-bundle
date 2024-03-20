@@ -7,17 +7,11 @@
     "paths": {
       "#/*": [
         "./src/*"
-      ],
-      "~/*": [
-        "./stories/*"
       ]
     },
     "noEmit": false
   },
   "include": [
-    ".storybook",
-    "stories",
-    "src/**/*",
-    "../ui-kit-vite/src/components/index.ts"
+    "src/**/*"
   ]
 }

@@ -27,3 +27,4 @@ lib
 stats.html
 tsconfig.app.tsbuildinfo
 tsconfig.tsbuildinfo
+vite.config.ts.timestamp-*
