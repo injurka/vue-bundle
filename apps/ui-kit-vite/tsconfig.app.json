@@ -7,16 +7,11 @@
     "paths": {
       "#/*": [
         "./src/*"
-      ],
-      "~/*": [
-        "./stories/*"
       ]
     },
     "noEmit": false
   },
   "include": [
-    ".storybook",
-    "stories",
     "src/**/*"
   ]
 }

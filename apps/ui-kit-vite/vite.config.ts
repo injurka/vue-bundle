@@ -13,13 +13,12 @@ export default defineConfig(async ({ command }): Promise<UserConfig> => ({
   plugins: [
     vue(),
     vueJsx({ optimize: true, enableObjectSlots: true }),
-    dts({ insertTypesEntry: true, tsconfigPath: 'tsconfig.build.json' }),
+    dts({ insertTypesEntry: true, tsconfigPath: 'tsconfig.app.json' }),
     visualizer(),
   ],
   resolve: {
     alias: {
       '#': fileURLToPath(new URL('./src', import.meta.url)),
-      '@': fileURLToPath(new URL('./stories', import.meta.url)),
     },
     extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue'],
   },

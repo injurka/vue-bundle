@@ -3,7 +3,6 @@
   "name": "ui-kit-vite",
   "type": "module",
   "version": "0.0.1",
-  "description": "Пакет стилизованных компонентов для проектов mentalhealth",
   "keywords": [
     "ui library"
   ],
@@ -33,15 +32,8 @@
     "bun": ">=1.x"
   },
   "scripts": {
-    "dev": "storybook dev -p 6006",
     "build": "rm -rf dist && vite build --mode lib",
-    "-------------------------------------------------------------------------------": "",
-    "storybook:build": "storybook build",
-    "--------------------------------------------------------------------------------": "",
-    "typecheck": "tsc -p tsconfig.app.json --noEmit ",
-    "----------------------------------------------------------------------------------": "",
-    "prepack": "clean-package",
-    "postpack": "clean-package restore"
+    "typecheck": "tsc -p tsconfig.app.json --noEmit "
   },
   "peerDependencies": {
     "vue": ">=3.3.0"
@@ -52,36 +44,16 @@
     }
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^8.0.0",
-    "@storybook/addon-interactions": "^8.0.0",
-    "@storybook/vue3": "^8.0.0",
-    "@storybook/vue3-vite": "^8.0.0",
     "@tsconfig/node20": "^20.1.2",
     "@types/node": "20.11.28",
     "@vitejs/plugin-vue": "5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "@vue/tsconfig": "^0.5.1",
-    "clean-package": "^2.2.0",
-    "esno": "^4.7.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "rollup-plugin-visualizer": "^5.12.0",
     "sass": "^1.72.0",
-    "storybook": "^8.0.0",
     "typescript": "5.4.2",
     "vite": "5.1.6",
     "vite-plugin-dts": "3.7.3",
     "vue": "^3.4.21"
-  },
-  "clean-package": {
-    "remove": [
-      "scripts",
-      "devDependencies",
-      "publishConfig",
-      "clean-package",
-      "packageManager",
-      "lint-staged",
-      "config"
-    ]
   }
 }

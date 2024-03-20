@@ -6,12 +6,10 @@ import './ui-header.scss'
 // Utilities
 import { useRender } from '#/helpers'
 
-
-
 export const UiHeader = defineComponent({
   name: 'UiHeader',
 
-    props: {
+  props: {
     style: {
       type: [String],
       default: '',
@@ -25,7 +23,7 @@ export const UiHeader = defineComponent({
       default: '',
     },
   },
-  
+
   setup(props, { slots }) {
     useRender(() => (
       <h2
