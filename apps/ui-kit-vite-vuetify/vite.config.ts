@@ -7,11 +7,13 @@ import { type UserConfig, defineConfig } from 'vite'
 
 import { visualizer } from 'rollup-plugin-visualizer'
 import dts from 'vite-plugin-dts'
+import vuetify from 'vite-plugin-vuetify'
 
 export default defineConfig(async ({ command }): Promise<UserConfig> => ({
   base: './',
   plugins: [
     vue(),
+    vuetify(),
     vueJsx({ optimize: true, enableObjectSlots: true }),
     dts({ insertTypesEntry: true, tsconfigPath: 'tsconfig.app.json' }),
     visualizer(),
@@ -30,7 +32,7 @@ export default defineConfig(async ({ command }): Promise<UserConfig> => ({
     sourcemap: false,
     lib: {
       entry: 'src/index.ts',
-      name: 'UiKit',
+      name: 'uikit',
       fileName: 'main',
       formats: ['es', 'cjs'],
     },
@@ -38,7 +40,7 @@ export default defineConfig(async ({ command }): Promise<UserConfig> => ({
       input: {
         main: path.resolve(__dirname, 'src/index.ts'),
       },
-      external: ['vue'],
+      external: ['vue', 'vuetify/components'],
       output: {
         exports: 'named',
       },

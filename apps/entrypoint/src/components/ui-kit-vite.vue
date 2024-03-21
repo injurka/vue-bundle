@@ -4,8 +4,5 @@ import { UiHeader, UiBtn } from "ui-kit-vite";
 
 <template>
   <UiHeader title="Vuuuue" />
-  <UiBtn> Button </UiBtn>
+  <UiBtn> ui-kit-vite </UiBtn>
 </template>
-
-<style lang="scss" scoped >
-</style>

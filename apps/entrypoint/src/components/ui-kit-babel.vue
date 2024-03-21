@@ -4,5 +4,5 @@ import { UiHeader, UiBtn } from "ui-kit-babel/components";
 
 <template>
   <UiHeader title="Vuuuue" />
-  <UiBtn> Button </UiBtn>
+  <UiBtn> ui-kit-babel </UiBtn>
 </template>

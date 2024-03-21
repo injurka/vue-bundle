@@ -1,15 +1,13 @@
-import type { PropType } from 'vue'
 import { defineComponent } from 'vue'
-import { VBtn } from 'vuetify/components'
 
 // Styles
-import './ui-btn.scss'
+import './ui-header.scss'
 
 // Utilities
 import { useRender } from '#/helpers'
 
-export const UiBtn = defineComponent({
-  name: 'UiBtn',
+export const UiHeader = defineComponent({
+  name: 'UiHeader',
 
   props: {
     style: {
@@ -20,39 +18,30 @@ export const UiBtn = defineComponent({
       type: [String],
       default: '',
     },
-    text: {
+    title: {
       type: [String, Number],
       default: '',
-    },
-    color: {
-      type: String as PropType<'primary' | 'secondary'>,
-      default: 'primary',
     },
   },
 
   setup(props, { slots }) {
     useRender(() => (
-      <VBtn
+      <h2
         class={[
-          'ui-btn',
-          props.color,
+          'ui-header',
           props.class,
         ]}
         style={[
           props.style,
         ]}
       >
-        { props.text && (
-          <span>
-            { props.text }
-          </span>
-        )}
         { slots.default?.() }
-      </VBtn>
+        { props.title }
+      </h2>
     ))
 
     return { }
   },
 })
 
-export type UiBtn = InstanceType<typeof UiBtn>
+export type UiHeader = InstanceType<typeof UiHeader>

@@ -1,59 +1,89 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "ui-kit-vite",
-  "type": "module",
+  "name": "ui-kit-babel-vuetify",
   "version": "0.0.1",
   "keywords": [
     "ui library"
   ],
   "sideEffects": [
-    "**/*.css",
-    "**/*.scss"
+    "*.sass",
+    "*.scss",
+    "*.css",
+    "*.vue"
   ],
   "exports": {
     ".": {
-      "types": "./dist/main.d.ts",
-      "import": "./dist/main.js",
-      "require": "./dist/main.cjs"
+      "types": "./lib/plugin.d.mts",
+      "default": "./lib/plugin.mjs"
     },
-    "./main.css": {
-      "import": "./dist/main.css",
-      "require": "./dist/main.css"
-    }
+    "./components": "./lib/components/index.mjs",
+    "./components/*": "./lib/components/*/index.mjs",
+    "./*": "./*"
   },
-  "main": "./dist/main.cjs",
-  "module": "./dist/main.js",
-  "types": "./dist/main.d.ts",
+  "main": "lib/plugin.mjs",
+  "module": "lib/plugin.mjs",
+  "types": "lib/plugin.d.mts",
   "files": [
-    "dist"
+    "dist/",
+    "lib/"
   ],
   "engines": {
     "node": ">=20.x",
     "bun": ">=1.x"
   },
   "scripts": {
-    "build": "rm -rf dist && vite build --mode lib",
+    "build": "rimraf lib dist && concurrently \"nr build:dist\" \"nr build:lib\" -n \"dist,lib\" --kill-others-on-fail -r && nr build:types",
+    "build:dist": "rollup --config build/rollup.config.mjs",
+    "build:lib": "cross-env NODE_ENV=lib babel src --out-dir lib --source-maps --extensions \".ts\",\".tsx\",\".snap\" --copy-files --no-copy-ignored --out-file-extension .mjs",
+    "build:types": "rimraf types-temp && tsc --pretty --emitDeclarationOnly -p tsconfig.build.json && rollup --config build/rollup.types.config.mjs && rimraf types-temp",
     "typecheck": "tsc -p tsconfig.app.json --noEmit "
   },
   "peerDependencies": {
-    "vue": ">=3.3.0"
+    "vue": ">=3.4.0",
+    "vuetify": ">=3.5.0"
   },
   "peerDependenciesMeta": {
     "vue": {
       "optional": false
+    },
+    "vuetify": {
+      "optional": false
     }
   },
   "devDependencies": {
+    "@babel/cli": "^7.23.4",
+    "@babel/core": "^7.23.7",
+    "@babel/preset-env": "^7.23.8",
+    "@babel/preset-typescript": "^7.23.3",
+    "@rollup/plugin-alias": "^5.1.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@tsconfig/node20": "^20.1.2",
     "@types/node": "20.11.28",
-    "@vitejs/plugin-vue": "5.0.4",
-    "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "@vue/babel-plugin-jsx": "^1.2.1",
     "@vue/tsconfig": "^0.5.1",
+    "acorn-walk": "^8.3.2",
+    "autoprefixer": "^10.4.18",
+    "babel-plugin-add-import-extension": "1.5.1",
+    "babel-plugin-module-resolver": "^5.0.0",
+    "babel-plugin-transform-define": "^2.1.4",
+    "babel-polyfill": "^6.26.0",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "cssnano": "^6.1.0",
+    "fast-glob": "^3.3.2",
+    "magic-string": "^0.30.8",
+    "micromatch": "^4.0.5",
+    "mkdirp": "^3.0.1",
+    "postcss": "^8.4.37",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.13.0",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-sass": "^1.12.21",
     "rollup-plugin-visualizer": "^5.12.0",
     "sass": "^1.72.0",
     "typescript": "5.4.2",
-    "vite": "5.1.6",
-    "vite-plugin-dts": "3.7.3",
-    "vue": "^3.4.21"
+    "vue": "^3.4.21",
+    "vuetify": "^3.5.11"
   }
 }

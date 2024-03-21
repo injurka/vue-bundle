@@ -30,7 +30,7 @@ export default defineConfig(async ({ command }): Promise<UserConfig> => ({
     sourcemap: false,
     lib: {
       entry: 'src/index.ts',
-      name: 'UiKit',
+      name: 'uikit',
       fileName: 'main',
       formats: ['es', 'cjs'],
     },

@@ -53,14 +53,13 @@ function createTypesConfig(input, output, renderChunk, filter) {
               await renderChunk(code)
             code.replaceAll(/import([^;])*?from 'vue-router'/gm, '// @ts-ignore\n$&')
 
-            // eslint-disable-next-line unused-imports/no-unused-vars
             const map = code.generateMap({
               includeContent: false,
             })
 
             return {
               code: code.toString(),
-              map: null,
+              map,
             }
           },
         },

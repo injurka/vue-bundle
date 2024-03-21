@@ -32,7 +32,6 @@
     "bun": ">=1.x"
   },
   "scripts": {
-    "dev": "storybook dev -p 6006",
     "build": "rimraf lib dist && concurrently \"nr build:dist\" \"nr build:lib\" -n \"dist,lib\" --kill-others-on-fail -r && nr build:types",
     "build:dist": "rollup --config build/rollup.config.mjs",
     "build:lib": "cross-env NODE_ENV=lib babel src --out-dir lib --source-maps --extensions \".ts\",\".tsx\",\".snap\" --copy-files --no-copy-ignored --out-file-extension .mjs",

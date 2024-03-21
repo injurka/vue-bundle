@@ -10,7 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.4.21"
+    "vue": "^3.4.21",
+    "vuetify": "^3.5.11"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
@@ -19,8 +20,11 @@
     "sass": "^1.72.0",
     "typescript": "^5.4.2",
     "ui-kit-babel": "workspace:ui-kit-babel",
+    "ui-kit-babel-vuetify": "workspace:ui-kit-babel-vuetify",
     "ui-kit-vite": "workspace:ui-kit-vite",
+    "ui-kit-vite-vuetify": "workspace:ui-kit-vite-vuetify",
     "vite": "^5.1.6",
+    "vite-plugin-vuetify": "^2.0.3",
     "vue-tsc": "^2.0.6"
   }
 }
